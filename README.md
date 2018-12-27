@@ -6,21 +6,29 @@
 
 ## Install
 
+NPM
+
 ```bash
 npm install --save react-evacon
+```
+
+YARN
+
+```bash
+yarn add --save react-evacon
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import Evacon from 'react-evacon'
 
 import MyComponent from 'react-evacon'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <Evacon type="github"/>
     )
   }
 }

@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'react-evacon'
+import Evacon from 'react-evacon'
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <h2>React Evacon</h2>
+        <div>
+          <Evacon fill="red" type="github" style={{verticalAlign: 'middle'}}/>
+          <Evacon type="alert-circle-outline"/>
+        </div>
       </div>
     )
   }

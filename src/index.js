@@ -1,22 +1,43 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
+import { string, bool } from 'prop-types'
+import eva from 'eva-icons'
+import 'eva-icons/style/eva-icons.css'
 
-import styles from './styles.css'
+const { icons } = eva
+const Evacon = ({
+  type, 
+  width = 24, 
+  height = 24, 
+  animationType,
+  animationHover,
+  animationInfinity,
+  fill,
+  className,
+  style,
+  ...props }) => {
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
+  const animation = animationType ? 
+    {type: animationType, hover: animationHover, infinity: animationInfinity} : null
+
+  const _props = {
+    height,
+    width,
+    fill,
+    animation,
+    ...props
   }
+  return (
+    <i className={className} style={style} dangerouslySetInnerHTML={{
+      __html: icons[type].toSvg({..._props})
+    }}></i>
+  )
+}
 
-  render() {
-    const {
-      text
-    } = this.props
+export default Evacon
 
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
+Evacon.propTypes = {
+  type: string,
+  animationType: string,
+  animationHover: bool,
+  animationInfinity: bool
 }
