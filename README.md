@@ -23,8 +23,6 @@ yarn add --save react-evacon
 ```jsx
 import Evacon from 'react-evacon'
 
-import MyComponent from 'react-evacon'
-
 class Example extends Component {
   render () {
     return (
